@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue 3.4 Template</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/normalize.css/normalize.css"
+    />
+    <style type="text/css">
+      body {
+        font-family: monospace;
+        padding: 20px;
+        font-size: 2em;
+      }
+      .can {
+        color: green;
+        background-color: azure;
+      }
+      .cant {
+        color: red;
+        background-color: cornsilk;
+      }
+    </style>
+    <script src="https://unpkg.com/vue@3.4.0"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div>
+        <div>{{message}}</div>
+        <div>
+            <label>Enter Your Age </label>
+            <input v-model="age"></input>
+        </div>
+        
+        <div>
+          Can you Drive:
+          <span :class="{'can': canDrive == 'Yes', 'cant': canDrive == 'No'}"
+            >{{canDrive}}
+          </span>
+        </div>
+        <div>
+          Driving License:
+          <span
+            :class="{'can': hasLicense == 'available', 'cant': hasLicense == 'not available'}"
+            >{{hasLicense}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <script>
+      const { createApp, ref, computed } = Vue;
+      const App = {
+        setup() {
+          let message = ref("Hey Arjun!");
+          let age = ref(null);
+          let license = ref(true);
+          let canDrive = computed(() => {
+            console.log("Computed!");
+            return age.value >= 30 ? "Yes" : "No";
+          });
+          let hasLicense = computed(() => {
+            console.log("Computed License availability");
+            return canDrive.value == "Yes" ? "available" : "not available";
+          });
+
+        //   setTimeout(() => {
+        //     console.log("Changed !");
+        //     message.value = "Hey Sanchita!";
+        //     age.value = 29;
+        //   }, 5000);
+
+          return { message, canDrive, hasLicense, age };
+        },
+      };
+
+      createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
