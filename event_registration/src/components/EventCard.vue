@@ -3,18 +3,15 @@
     <h3 class="p-2 font-medium text-xl border-b border-blue-600">{{ title }}</h3>
     <p class="p-2 font-medium text-xl border-b border-blue-600">{{ when }}</p>
     <p class="p-3">{{ description }}</p>
-    <section class="fles justify-end p-4">
-      <button
-        class="text-sm font-medium border border-gray-200 rounded-full px-3 py-1 hover:bg-blue-300"
-        @click="$emit('register')"
-      >
-        Register
-      </button>
+    <section class="p-4">
+      <RoundButton @click="$emit('register')">Register</RoundButton>
     </section>
   </div>
 </template>
 
 <script setup>
+import RoundButton from './RoundButton.vue';
+
 defineProps({
   title: String,
   when: String,
