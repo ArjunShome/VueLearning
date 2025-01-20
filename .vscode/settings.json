@@ -43,5 +43,6 @@
   "editor.scrollbar.scrollByPage": true,
   "zenMode.showTabs": "single",
   "zenMode.centerLayout": false,
-  "zenMode.fullScreen": true
+  "zenMode.fullScreen": true,
+  "css.lint.unknownAtRules": "ignore"
 }
