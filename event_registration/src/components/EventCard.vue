@@ -1,16 +1,27 @@
 <template>
   <div class="border border-gray-900 bg-green-300 rounded-md">
-    <h3 class="p-2 font-medium text-xl border-b border-blue-600">{{ title }}</h3>
-    <p class="p-2 font-medium text-xl border-b border-blue-600">{{ when }}</p>
-    <p class="p-3">{{ description }}</p>
-    <section class="p-4">
-      <RoundButton @click="$emit('register')">Register</RoundButton>
-    </section>
+    <SectionCard>
+      <template #event_name>
+        {{ title }}
+      </template>
+      <template #event_date>
+        {{ when }}
+      </template>
+      <template #event_desc>
+        {{ description }}
+      </template>
+      <template #footer>
+        <div class="p-1">
+          <RoundButton @click="$emit('register')">Register</RoundButton>
+        </div>
+      </template>
+    </SectionCard>
   </div>
 </template>
 
 <script setup>
 import RoundButton from './RoundButton.vue';
+import SectionCard from './SectionCard.vue';
 
 defineProps({
   title: String,
