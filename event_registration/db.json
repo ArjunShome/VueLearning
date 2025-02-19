@@ -1,0 +1,33 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Arjun's Wedding",
+      "when": "November 2022",
+      "description": "Arjun and Sanchita's Wedding",
+      "location": "Nonachandanpukur Baroari-Tola Durga-Bari"
+    },
+    {
+      "id": 2,
+      "title": "Python Conference",
+      "when": "February 2025",
+      "description": "Python Conference 2025 in Hyderabad",
+      "location": "Hyderabad, Hitech City"
+    },
+    {
+      "id": 3,
+      "title": "Ml & AI Training",
+      "when": "February 2025",
+      "description": "Training on Machine Learning and Artificcial Intelligence",
+      "location": "Online, Upgrad"
+    },
+    {
+      "id": 4,
+      "title": "Intex Presentation",
+      "when": "March 2025",
+      "description": "Presentation on Intex Restructure deployments",
+      "location": "Greenstreet Meeting Room Canver"
+    }
+  ],
+  "bookings": []
+}

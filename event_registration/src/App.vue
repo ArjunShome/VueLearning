@@ -28,42 +28,17 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
 import EventCard from '@/components/EventCard.vue';
 import BookingStatusItem from './components/BookingStatusItem.vue';
-const events = [
-  {
-    id: 1,
-    title: "Arjun's Wedding",
-    when: 'November 2022',
-    description: "Arjun and Sanchita's Wedding",
-    registered: false
-  },
-  {
-    id: 2,
-    title: 'Python Conference',
-    when: 'February 2025',
-    description: 'Python Conference 2025 in Hyderabad',
-    registered: false
-  },
-  {
-    id: 3,
-    title: 'Ml & AI Training',
-    when: 'February 2025',
-    description: 'Training on Machine Learning and Artificcial Intelligence',
-    registered: false
-  },
-  {
-    id: 4,
-    title: 'Intex Presentation',
-    when: 'March 2025',
-    description: 'Presentation on Intex Restructure deployments',
-    registered: false
-  }
-];
-const cancelBooking = (index) => {
-  events[index].registered = false;
+
+const events = ref([]);
+
+const fetchEvents = async () => {
+  const response = await fetch('http://localhost:5172/events');
+  events.value = await response.json();
+  console.log(events.value);
 };
-const confirmBooking = (index) => {
-  events[index].registered = true;
-};
+onMounted(() => fetchEvents());
 </script>
