@@ -1,10 +1,11 @@
 <template>
   <RoundedCard>
     <div class="flex justify-between p-4">
-      <div>
-        {{ description }}
+      <div class="flex space-x-2">
+        <div>{{ description }}</div>
+        <div>{{ status }}</div>
       </div>
-      <RoundButton variant="danger"> Cancel </RoundButton>
+      <RoundButton variant="danger" @click="$emit('cancel')"> Cancel </RoundButton>
     </div>
   </RoundedCard>
 </template>
@@ -15,7 +16,7 @@ import RoundedCard from './RoundedCard.vue';
 
 defineProps({
   description: String,
-  isRegistered: Boolean
+  status: String
 });
 defineEmits(['cancel']);
 </script>
