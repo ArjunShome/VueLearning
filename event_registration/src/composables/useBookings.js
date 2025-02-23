@@ -46,6 +46,7 @@ const handleResgistration = async (event) => {
     } else {
       throw new Error('Booking Could not be Done successfully!! ');
     }
+    // eslint-disable-next-line no-unused-vars
   } catch (e) {
     bookings.value = bookings.value.filter((b) => b.id !== newBooking.id);
   }
