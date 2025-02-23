@@ -12,6 +12,7 @@
 <script setup>
 const variants = {
   default: 'border border-gray-200 hover:bg-blue-300',
+  retry: 'bg-orange-300 enabled:hover:bg-orange-400 text-brown-700',
   danger: 'bg-red-200 enabled:hover:bg-red-100 text-red-900'
 };
 defineProps({
